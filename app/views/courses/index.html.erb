@@ -1,16 +1,15 @@
 <h1>Searching for - <%= @search_term %></h1>
 <table border="1">
 	<tr>
-		<th>Image</th>
-		<th>Name</th>
-		<th>location</th>
+		<th>State</th>
+		
 	</tr>
-	
+	<% @courses.each do |course| %>
 		<tr class=<%= cycle('even','odd') %>>
-			<td><%= image_tag(@courses["avatar_url"])%></td>
-			<td><%= @courses["name"] %></td>
-			<td><%= @courses["location"] %></td>
-		</tr>
 	
+			<td><%= course["state"] %></td>
+	
+		</tr>
+	<% end %>
 
 </table>

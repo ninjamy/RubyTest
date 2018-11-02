@@ -4,15 +4,16 @@ require 'pp'
 class Coursera 
 	include HTTParty
 
-	base_url = 'https://api.github.com/users/'
-	#default_params fields: "smallIcon,shortDescription", q: "search"
+	base_uri  'http://api.airvisual.com/v2/states?'
+	default_params key: "7Qmax99oSg4SyMFTj"
 	format :json
 
 	def self.for term
-		get("",query: { query: term})["elements"]
+		get("", query: {country: term})["data"]
+		#get("")["docs"]
 	end
 end
 
-pp Coursera.for "ninjamy"
 
-put "beep boop"
+pp Coursera.for "USA"
+
